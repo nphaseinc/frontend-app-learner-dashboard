@@ -17,7 +17,7 @@ export const CourseCardTitle = ({ cardId }) => {
     <Button
       variant="link"
       as="a"
-      href={homeUrl}
+      href={homeUrl || 'disabled'}
       className="course-card-title text-dark p-0"
       data-testid="CourseCardTitle"
       onClick={handleTitleClicked}
