@@ -1,7 +1,8 @@
 import { StrictDict } from 'utils';
 import { configuration } from 'config';
+import { getConfig } from '@edx/frontend-platform';
 
-const baseUrl = `${configuration.LMS_BASE_URL}`;
+const baseUrl = getConfig().LMS_BASE_URL;
 export const ecommerceUrl = `${configuration.ECOMMERCE_PUBLIC_URL_ROOT}`;
 
 export const api = `${baseUrl}/api`;
@@ -18,7 +19,7 @@ const entitlementEnrollment = (uuid) => `${api}/entitlements/v1/entitlements/${u
 const updateUrl = (base, url) => ((url == null || url.startsWith('http://') || url.startsWith('https://')) ? url : `${base}${url}`);
 
 export const baseAppUrl = (url) => updateUrl(baseUrl, url);
-export const learningMfeUrl = (url) => updateUrl(configuration.LEARNING_BASE_URL, url);
+export const learningMfeUrl = (url) => updateUrl(getConfig().LEARNING_BASE_URL, url);
 
 // static view url
 const programsUrl = baseAppUrl('/dashboard/programs');
