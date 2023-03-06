@@ -53,7 +53,7 @@ const messages = defineMessages({
   },
   logoAltText: {
     id: 'learnerVariantDashboard.logoAltText',
-    defaultMessage: 'edX, Inc. Dashboard',
+    defaultMessage: 'RedCapCloud Dashboard',
     description: 'Alt text for the edX logo.',
   },
   collapseMenuOpenAltText: {
