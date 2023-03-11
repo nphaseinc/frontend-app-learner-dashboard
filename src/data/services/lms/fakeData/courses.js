@@ -68,7 +68,7 @@ export const globalData = {
     isNeeded: true,
     sendEmailUrl: 'sendConfirmation@edx.org',
   },
-  enterpriseDashboard: { label: 'edX, Inc.', url: '/edx-dashboard' },
+  enterpriseDashboard: { label: 'RedCapCloud', url: '/learner-dashboard' },
   platformSettings: {
     supportEmail: 'support@example.com',
     billingEmail: 'billing@email.com',

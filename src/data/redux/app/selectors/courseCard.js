@@ -135,6 +135,10 @@ export const courseCard = StrictDict({
     cardSimpleSelectors.gradeData,
     (gradeData) => ({ isPassing: gradeData.isPassing }),
   ),
+  grade: mkCardSelector(
+    cardSimpleSelectors.grade,
+    (grade) => ({ gradeValue: grade.gradeValue }),
+  ),
   relatedPrograms: mkCardSelector(
     cardSimpleSelectors.relatedPrograms,
     (relatedPrograms) => ({
