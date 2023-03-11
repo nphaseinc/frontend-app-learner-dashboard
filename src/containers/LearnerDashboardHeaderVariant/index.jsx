@@ -10,7 +10,6 @@ import './index.scss';
 
 export const LearnerDashboardHeaderVariant = () => (
   <>
-    <ConfirmEmailBanner />
     <CollapsedHeader />
     <ExpandedHeader />
     <MasqueradeBar />
