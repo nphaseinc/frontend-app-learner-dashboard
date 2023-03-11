@@ -8,7 +8,7 @@ export const ecommerceUrl = `${configuration.ECOMMERCE_PUBLIC_URL_ROOT}`;
 export const api = `${baseUrl}/api`;
 
 // const init = `${api}learner_home/mock/init`; // mock endpoint for testing
-const init = `${api}/rcc-custom-dashboard/v1/init-dashboard/`;
+const init = `${api}/rcc-custom-dashboard/init-dashboard/`;
 
 const event = `${baseUrl}/event`;
 const courseUnenroll = `${baseUrl}/change_enrollment`;
