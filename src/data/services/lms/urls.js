@@ -3,6 +3,7 @@ import { configuration } from 'config';
 import { getConfig } from '@edx/frontend-platform';
 
 const baseUrl = 'https://lms-dev.redcapcloud.com';
+// const baseUrl = `${configuration.LMS_BASE_URL}`;
 export const ecommerceUrl = `${configuration.ECOMMERCE_PUBLIC_URL_ROOT}`;
 
 export const api = `${baseUrl}/api`;

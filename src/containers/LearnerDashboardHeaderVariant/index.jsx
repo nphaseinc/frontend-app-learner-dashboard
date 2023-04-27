@@ -8,10 +8,10 @@ import ExpandedHeader from './ExpandedHeader';
 
 import './index.scss';
 
-export const LearnerDashboardHeaderVariant = () => (
+export const LearnerDashboardHeaderVariant = ({selectRole, showUserRccRoleData, title}) => (
   <>
     <CollapsedHeader />
-    <ExpandedHeader />
+    <ExpandedHeader selectRole={selectRole} showUserRccRoleData={showUserRccRoleData} title={title} />
     <MasqueradeBar />
   </>
 );
