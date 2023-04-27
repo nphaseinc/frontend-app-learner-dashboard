@@ -10,9 +10,9 @@ export const useIsDashboardCollapsed = () => {
   return width < breakpoints.large.maxWidth;
 };
 
-export const useInitializeDashboard = () => {
+export const useInitializeDashboard = (role) => {
   const initialize = apiHooks.useInitializeApp();
-  React.useEffect(() => { initialize(); }, []); // eslint-disable-line
+  React.useEffect(() => { initialize(); }, [role]); // eslint-disable-line
 };
 
 export const useDashboardMessages = () => {

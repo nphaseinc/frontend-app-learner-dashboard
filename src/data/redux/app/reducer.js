@@ -7,6 +7,7 @@ const initialState = {
   courseData: {},
   entitlement: [],
   emailConfirmation: {},
+  userRccRole: [],
   enterpriseDashboard: {},
   platformSettings: {},
   suggestedCourses: [],
@@ -39,6 +40,7 @@ const app = createSlice({
     loadGlobalData: (state, { payload }) => ({
       ...state,
       emailConfirmation: payload.emailConfirmation,
+      userRccRole: payload.userRccRole,
       enterpriseDashboard: payload.enterpriseDashboard,
       platformSettings: payload.platformSettings,
       suggestedCourses: payload.suggestedCourses,

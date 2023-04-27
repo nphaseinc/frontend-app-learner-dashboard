@@ -108,6 +108,13 @@ export const globalData = {
       utmParams: 'utm_campaign=social-sharing-db&utm_medium=social&utm_source=twitter',
     },
   },
+  userRccRole:[
+    {
+      "id": 123,
+      "rcc_role": "demo",
+      "active": true
+    }
+  ]
 };
 
 export const genCourseRunData = (data = {}) => ({
