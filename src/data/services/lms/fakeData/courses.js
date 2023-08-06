@@ -68,7 +68,7 @@ export const globalData = {
     isNeeded: true,
     sendEmailUrl: 'sendConfirmation@edx.org',
   },
-  enterpriseDashboard: { label: 'edX, Inc.', url: '/edx-dashboard' },
+  enterpriseDashboard: { label: 'RedCapCloud', url: '/learner-dashboard' },
   platformSettings: {
     supportEmail: 'support@example.com',
     billingEmail: 'billing@email.com',
@@ -108,6 +108,13 @@ export const globalData = {
       utmParams: 'utm_campaign=social-sharing-db&utm_medium=social&utm_source=twitter',
     },
   },
+  userRccRole:[
+    {
+      "id": 123,
+      "rcc_role": "demo",
+      "active": true
+    }
+  ]
 };
 
 export const genCourseRunData = (data = {}) => ({

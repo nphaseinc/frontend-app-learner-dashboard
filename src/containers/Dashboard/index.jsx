@@ -14,8 +14,8 @@ import DashboardLayout from './DashboardLayout';
 import hooks from './hooks';
 import './index.scss';
 
-export const Dashboard = () => {
-  hooks.useInitializeDashboard();
+export const Dashboard = (role) => {
+  hooks.useInitializeDashboard(role);
   const { pageTitle } = hooks.useDashboardMessages();
   const hasCourses = reduxHooks.useHasCourses();
   const hasAvailableDashboards = reduxHooks.useHasAvailableDashboards();

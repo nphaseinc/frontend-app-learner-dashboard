@@ -30,7 +30,7 @@ jest.mock('tracking', () => {
 
 const state = new MockUseState(hooks);
 
-const enterpriseDashboardData = { label: 'edX, Inc.', url: '/edx-dashboard' };
+const enterpriseDashboardData = { label: 'RedCapCloud', url: '/edx-dashboard' };
 
 describe('EnterpriseDashboard hooks', () => {
   reduxHooks.useEnterpriseDashboardData.mockReturnValue({ ...enterpriseDashboardData });

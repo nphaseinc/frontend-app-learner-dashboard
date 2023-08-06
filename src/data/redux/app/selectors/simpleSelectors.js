@@ -12,6 +12,7 @@ export const simpleSelectors = StrictDict({
   platformSettings: mkSimpleSelector(app => app.platformSettings),
   suggestedCourses: mkSimpleSelector(app => app.suggestedCourses),
   emailConfirmation: mkSimpleSelector(app => app.emailConfirmation),
+  userRccRole: mkSimpleSelector(app => app.userRccRole),
   enterpriseDashboard: mkSimpleSelector(app => app.enterpriseDashboard),
   selectSessionModal: mkSimpleSelector(app => app.selectSessionModal),
   pageNumber: mkSimpleSelector(app => app.pageNumber),
@@ -27,6 +28,7 @@ export const cardSimpleSelectors = StrictDict({
   enrollment: ({ enrollment }) => enrollment,
   entitlement: ({ entitlement }) => entitlement,
   gradeData: ({ gradeData }) => gradeData,
+  grade: ({ grade }) => grade,
   relatedPrograms: ({ programs: { relatedPrograms } }) => relatedPrograms,
 });
 

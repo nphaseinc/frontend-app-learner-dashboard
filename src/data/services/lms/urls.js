@@ -8,7 +8,7 @@ const getBaseUrl = () => getConfig().LMS_BASE_URL;
 
 export const getApiUrl = () => (`${getConfig().LMS_BASE_URL}/api`);
 
-const getInitApiUrl = () => (`${getApiUrl()}/learner_home/init`);
+const getInitApiUrl = () => (`${getApiUrl()}/rcc-custom-dashboard/init-dashboard/`);
 
 const event = `${getBaseUrl()}/event`;
 const courseUnenroll = `${getBaseUrl()}/change_enrollment`;

@@ -10,6 +10,7 @@ const actions = redux.actions.app;
 /** Simple Selectors **/
 export const usePageNumber = () => useSelector(selectors.pageNumber);
 export const useEmailConfirmationData = () => useSelector(selectors.emailConfirmation);
+export const userRccRoleData = () => useSelector(selectors.userRccRole);
 export const useEnterpriseDashboardData = () => useSelector(selectors.enterpriseDashboard);
 export const usePlatformSettingsData = () => useSelector(selectors.platformSettings);
 export const useSelectSessionModalData = () => useSelector(selectors.selectSessionModal);
@@ -36,6 +37,7 @@ export const useCardCreditData = useCourseCardData(courseCard.credit);
 export const useCardEnrollmentData = useCourseCardData(courseCard.enrollment);
 export const useCardEntitlementData = useCourseCardData(courseCard.entitlement);
 export const useCardGradeData = useCourseCardData(courseCard.gradeData);
+export const useCardGrade = useCourseCardData(courseCard.grade);
 export const useCardProviderData = useCourseCardData(courseCard.courseProvider);
 export const useCardRelatedProgramsData = useCourseCardData(courseCard.relatedPrograms);
 

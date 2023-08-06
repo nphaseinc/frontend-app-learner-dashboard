@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -38,6 +38,7 @@ export const App = () => {
   };
   const hasNetworkFailure = isFailed.initialize || isFailed.refreshList;
   const { supportEmail } = reduxHooks.usePlatformSettingsData();
+  const showUserRccRoleData = reduxHooks.userRccRoleData();
   const loadData = reduxHooks.useLoadData();
 
   React.useEffect(() => {
@@ -71,20 +72,28 @@ export const App = () => {
       }
     }
   }, [authenticatedUser, loadData]);
+  const [currentRole, setCurrentRole] = useState(localStorage.getItem('current_role'), '');
+  const handleClick = (role) => {
+    localStorage.setItem('current_role', role);
+    setCurrentRole(role);
+  };
   return (
     <Router>
       <Helmet>
         <title>{formatMessage(messages.pageTitle)}</title>
       </Helmet>
       <div>
-        <LearnerDashboardHeader />
+        <LearnerDashboardHeader
+            selectRole = {handleClick} showUserRccRoleData={showUserRccRoleData}
+            title={currentRole || (showUserRccRoleData && showUserRccRoleData[0] && showUserRccRoleData[0].rcc_role) ? (currentRole ? currentRole : showUserRccRoleData[0].rcc_role) : 'Select Role'}
+        />
         <main>
           {hasNetworkFailure
             ? (
               <Alert variant="danger">
                 <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
               </Alert>
-            ) : (<Dashboard />)}
+            ) : (<Dashboard role={currentRole} />)}
         </main>
         <Footer logo={process.env.LOGO_POWERED_BY_OPEN_EDX_URL_SVG} />
         <ZendeskFab />
