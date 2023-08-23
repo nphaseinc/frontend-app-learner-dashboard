@@ -13,8 +13,8 @@ export const ExpandedHeader = ({selectRole, showUserRccRoleData, title}) => {
 
   return (
     !isCollapsed && (
-    <header className="d-flex shadow-sm align-items-center learner-variant-header pl-4">
-      <div className="flex-grow-1 d-flex align-items-center">
+    <header className="d-flex shadow-sm align-items-center learner-variant-header pl-3">
+      <div className="flex-grow-1">
         <BrandLogo />
       </div>
         <div className="pr-2.5">

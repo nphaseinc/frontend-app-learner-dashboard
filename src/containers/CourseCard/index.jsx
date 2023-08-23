@@ -28,14 +28,13 @@ export const CourseCard = ({
   }
   return (
     <div className="mb-4.5 course-card" id={cardId} data-testid="CourseCard">
-      <Card variant="dark" orientation={orientation}>
+      <Card orientation={orientation}>
         <div className="d-flex flex-column w-100">
           <div {...(!isCollapsed && { className: 'd-flex' })}>
             <CourseCardImage cardId={cardId} orientation="horizontal" />
             <Card.Body>
               <Card.Header
                 title={<CourseCardTitle cardId={cardId} />}
-                actions={<CourseCardMenu cardId={cardId} />}
               />
               <Card.Section className="pt-0 w-50 float-left">
                 <CourseCardDetails cardId={cardId} />
