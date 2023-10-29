@@ -24,8 +24,9 @@ export const ResumeButton = ({ cardId }) => {
       as="a"
       href="#"
       onClick={handleClick}
+      size="lg"
     >
-      {formatMessage(messages.resume)}
+      {formatMessage(messages.continue)}
     </ActionButton>
   );
 };

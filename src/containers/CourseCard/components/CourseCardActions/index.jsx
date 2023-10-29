@@ -5,18 +5,19 @@ import { ActionRow } from '@edx/paragon';
 
 import { reduxHooks } from 'hooks';
 
-import SelectSessionButton from './SelectSessionButton';
 import BeginCourseButton from './BeginCourseButton';
 import ResumeButton from './ResumeButton';
 import ViewCourseButton from './ViewCourseButton';
+import ViewCertificateButton from './ViewCertificateButton';
 
 export const CourseCardActions = ({ cardId }) => {
-  const { isEntitlement, isFulfilled } = reduxHooks.useCardEntitlementData(cardId);
   const { isVerified, hasStarted } = reduxHooks.useCardEnrollmentData(cardId);
   const { isArchived } = reduxHooks.useCardCourseRunData(cardId);
+  const certificate = reduxHooks.useCardCertificateData(cardId);
+
   let PrimaryButton;
-  if (isEntitlement) {
-    PrimaryButton = isFulfilled ? ViewCourseButton : SelectSessionButton;
+  if (certificate.isDownloadable) {
+    PrimaryButton = ViewCertificateButton;
   } else if (isArchived) {
     PrimaryButton = ViewCourseButton;
   } else {

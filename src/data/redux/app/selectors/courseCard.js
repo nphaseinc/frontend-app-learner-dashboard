@@ -139,6 +139,10 @@ export const courseCard = StrictDict({
     cardSimpleSelectors.grade,
     (grade) => ({ gradeValue: grade.gradeValue }),
   ),
+  subsectionCompletion: mkCardSelector(
+   cardSimpleSelectors.subsectionCompletion,
+   (subsectionCompletion) => ({ subsectionCompletionSummary: subsectionCompletion.subsectionCompletionSummary }),
+  ),
   relatedPrograms: mkCardSelector(
     cardSimpleSelectors.relatedPrograms,
     (relatedPrograms) => ({

@@ -24,8 +24,10 @@ export const BeginCourseButton = ({ cardId }) => {
       as="a"
       href="#"
       onClick={handleClick}
+      size="lg"
+      block
     >
-      {formatMessage(messages.beginCourse)}
+      {formatMessage(messages.startCourse)}
     </ActionButton>
   );
 };

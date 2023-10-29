@@ -25,6 +25,7 @@ export const ViewCourseButton = ({ cardId }) => {
       as="a"
       href="#"
       onClick={handleClick}
+      size="lg"
     >
       {formatMessage(messages.viewCourse)}
     </ActionButton>

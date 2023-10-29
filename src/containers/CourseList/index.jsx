@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useIntl } from '@edx/frontend-platform/i18n';
-import { Pagination } from '@edx/paragon';
+import { CardGrid, Pagination} from '@edx/paragon';
 
 import { reduxHooks } from 'hooks';
 import {
@@ -28,13 +28,15 @@ export const CourseList = () => {
     visibleList,
   } = useCourseListData();
   const isCollapsed = useIsCollapsed();
+  const concatenatedObject = [ ...visibleList, ...visibleList ];
+  console.log("concatenatedObject", concatenatedObject);
   return (
     <div className="course-list-container">
-      <div className="course-list-heading-container">
-        <h2 className="course-list-title">{formatMessage(messages.myCourses)}</h2>
-        <div className="course-filter-controls-container">
-          <CourseFilterControls {...filterOptions} />
-        </div>
+      <div className="course-list-heading-container mb-2">
+        <h3>{formatMessage(messages.allCourses)}({concatenatedObject.length})</h3>
+        {/*<div className="course-filter-controls-container">*/}
+        {/*  <CourseFilterControls {...filterOptions} />*/}
+        {/*</div>*/}
       </div>
       {hasCourses
         ? (
@@ -44,10 +46,20 @@ export const CourseList = () => {
                 <ActiveCourseFilters {...filterOptions} />
               </div>
             )}
-            <div className="d-flex flex-column flex-grow-1">
+            <div>
+              <CardGrid
+                  columnSizes={{
+                    xs: 6,
+                    lg: 3,
+                    xl: 3,
+                  }}
+                  hasEqualColumnHeights='true'
+              >
               {visibleList.map(({ cardId }) => (
                 <CourseCard key={cardId} cardId={cardId} />
               ))}
+              </CardGrid>
+
               {numPages > 1 && (
                 <Pagination
                   variant={isCollapsed ? 'reduced' : 'secondary'}

@@ -82,7 +82,7 @@ export const App = () => {
       <Helmet>
         <title>{formatMessage(messages.pageTitle)}</title>
       </Helmet>
-      <div>
+      <div className="pb-6">
         <LearnerDashboardHeader
             selectRole = {handleClick} showUserRccRoleData={showUserRccRoleData}
             title={currentRole || (showUserRccRoleData && showUserRccRoleData[0] && showUserRccRoleData[0].rcc_role) ? (currentRole ? currentRole : showUserRccRoleData[0].rcc_role) : 'Select Role'}
@@ -95,7 +95,6 @@ export const App = () => {
               </Alert>
             ) : (<Dashboard role={currentRole} />)}
         </main>
-        <Footer logo={process.env.LOGO_POWERED_BY_OPEN_EDX_URL_SVG} />
         <ZendeskFab />
       </div>
     </Router>

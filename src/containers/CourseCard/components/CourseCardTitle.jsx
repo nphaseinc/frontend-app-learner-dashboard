@@ -17,7 +17,7 @@ export const CourseCardTitle = ({ cardId }) => {
   );
   const { disableCourseTitle } = useActionDisabledState(cardId);
   return (
-    <h3>
+    <h4>
       {disableCourseTitle ? (
         <span className="course-card-title" data-testid="CourseCardTitle">{courseName}</span>
       ) : (
@@ -30,7 +30,7 @@ export const CourseCardTitle = ({ cardId }) => {
           {courseName}
         </a>
       )}
-    </h3>
+    </h4>
   );
 };
 
