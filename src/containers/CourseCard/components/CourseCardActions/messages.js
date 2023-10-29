@@ -21,6 +21,21 @@ export const messages = StrictDict({
     description: 'Course card view-course button text',
     defaultMessage: 'View Course',
   },
+  continue: {
+    id: 'learner-dash.courseCard.actions.continue',
+    description: 'Course card continue button text',
+    defaultMessage: 'Continue',
+  },
+  startCourse: {
+    id: 'learner-dash.courseCard.actions.startCourse',
+    description: 'Course card start-course button text',
+    defaultMessage: 'Start course',
+  },
+  getCertificate: {
+    id: 'learner-dash.courseCard.actions.getCertificate',
+    description: 'Course card get-certificate button text',
+    defaultMessage: 'Get certificate',
+  },
   selectSession: {
     id: 'learner-dash.courseCard.actions.selectSession',
     description: 'Course card select-session button text',

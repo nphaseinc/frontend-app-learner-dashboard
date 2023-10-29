@@ -19,7 +19,7 @@ export const DashboardLayout = ({ children, sidebar }) => {
   return (
     <Container fluid>
       <Row>
-        <Col {...columnConfig.courseList} className="course-list-column">
+        <Col className="course-list-column">
           {children}
         </Col>
       </Row>
