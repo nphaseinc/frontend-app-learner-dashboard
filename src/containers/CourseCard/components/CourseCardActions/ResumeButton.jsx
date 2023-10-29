@@ -25,6 +25,7 @@ export const ResumeButton = ({ cardId }) => {
       href="#"
       onClick={handleClick}
       size="lg"
+      block
     >
       {formatMessage(messages.continue)}
     </ActionButton>
