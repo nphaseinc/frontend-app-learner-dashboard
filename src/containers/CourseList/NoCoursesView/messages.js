@@ -8,7 +8,7 @@ const messages = defineMessages({
   },
   exploreCoursesPrompt: {
     id: 'Dashboard.NoCoursesView.exploreCoursesPrompt',
-    defaultMessage: 'Explore our courses to add them to your dashboard.',
+    defaultMessage: 'Explore our courses by contacting your admin to add them to your dashboard.',
     description: 'Prompt user to explore more courses',
   },
   exploreCoursesButton: {
