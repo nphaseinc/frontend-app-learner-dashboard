@@ -25,14 +25,6 @@ export const NoCoursesView = () => {
       <p>
         {formatMessage(messages.exploreCoursesPrompt)}
       </p>
-      <Button
-        variant="brand"
-        as="a"
-        href={baseAppUrl(courseSearchUrl)}
-        iconBefore={Search}
-      >
-        {formatMessage(messages.exploreCoursesButton)}
-      </Button>
     </div>
   );
 };
