@@ -36,6 +36,11 @@ export const messages = StrictDict({
     description: 'Sort radio form heading',
     defaultMessage: 'Sort',
   },
+  sortBy: {
+    id: 'learner-dash.courseListFilters.sortBy',
+    description: 'Sort radio form heading',
+    defaultMessage: 'Sort by',
+  },
   sortLastEnrolled: {
     id: 'learner-dash.courseListFilters.sortLastEnrolled',
     description: 'Last enrolled sort option text',
