@@ -22,7 +22,7 @@ export const NavBarFilters = ({
 
 	return (
 			<Stack
-				className="bg-dark-700 p-4"
+				className="bg-dark-700 p-3"
 				gap={3}
 				direction={ isExtraSmall ? "vertical" : "horizontal" }
 			>
