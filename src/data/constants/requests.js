@@ -10,6 +10,7 @@ export const RequestStates = StrictDict({
 export const RequestKeys = StrictDict({
   initialize: 'initialize',
   refreshList: 'refreshList',
+  searchList: 'searchList',
   newEntitlementEnrollment: 'newEntitlementEnrollment',
   leaveEntitlementEnrollment: 'leaveEntitlementEnrollment',
   switchEntitlementSession: 'switchEntitlementSession',
