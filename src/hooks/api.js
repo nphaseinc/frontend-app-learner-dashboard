@@ -67,6 +67,14 @@ export const useUnenrollFromCourse = (cardId) => {
   );
 };
 
+export const useSearchCourseInApp = (search_course) => {
+  const loadData = reduxHooks.useLoadData();
+  return module.useNetworkRequest(
+      (search_course) => api.initializeList({ search_course:search_course }),
+      { onSuccess: ({ data }) => loadData(data), requestKey: RequestKeys.initialize,
+  });
+};
+
 export const useMasqueradeAs = () => {
   const loadData = reduxHooks.useLoadData();
   return module.useNetworkRequest(

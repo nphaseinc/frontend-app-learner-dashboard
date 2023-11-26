@@ -16,8 +16,8 @@ import * as module from './api';
 /*********************************************************************************
  * GET Actions
  *********************************************************************************/
-export const initializeList = ({ user } = {}) => get(
-    stringifyUrl(urls.getInitApiUrl(), { [apiKeys.user]: user, current_role: localStorage.getItem('current_role')}),
+export const initializeList = ({ user, search_course } = {}) => get(
+    stringifyUrl(urls.getInitApiUrl(), { [apiKeys.user]: user, search_course:search_course, current_role: localStorage.getItem('current_role')}),
 );
 
 export const updateEntitlementEnrollment = ({ uuid, courseId }) => post(

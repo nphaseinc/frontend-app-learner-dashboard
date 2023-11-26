@@ -1,9 +1,26 @@
-import { useMediaQuery, breakpoints, Stack } from '@edx/paragon';
-import React from "react";
+import {
+	useMediaQuery,
+	breakpoints,
+	Stack,
+	Form,
+	FormControl,
+	StatefulButton,
+	Icon
+} from '@edx/paragon';
+import React, {
+	useEffect,
+	useState,
+} from 'react';
 import useCourseFilterControlsData from "./hooks";
 import CourseStatusDropDown from "./components/CourseStatusDropDown";
 import PropTypes from "prop-types";
 import SortByDropdown from "./components/SortByDropdown";
+import {useSearchCourseInApp} from "../../hooks/api";
+import messages from "../MasqueradeBar/messages";
+import {formatMessage} from "../../testUtils";
+import { Search } from '@edx/paragon/icons';
+import {updateQueryParam} from "./utils";
+
 export const NavBarFilters = ({
 								  sortBy,
 								  setSortBy,
@@ -18,7 +35,30 @@ export const NavBarFilters = ({
 		setFilters,
 		setSortBy,
 	});
+	const [searchCourse, setSearchCourse] = useState('');
+
+	useEffect(() => {
+		const getQueryParamValue = (param) => {
+			const queryParams = new URLSearchParams(window.location.search);
+			return queryParams.get(param);
+		};
+		// Check if the 'searchCourse' query parameter exists
+		const searchCourseFromUrl = getQueryParamValue('search_course');
+
+		// Update the state if the query parameter is present
+		if (searchCourseFromUrl) {
+			setSearchCourse(searchCourseFromUrl);
+		}
+	}, []);
+	const handleSearchCourseInputChange = (e) => setSearchCourse(e.target.value);
+
 	const isExtraSmall = useMediaQuery({ maxWidth: breakpoints.medium.maxWidth})
+	const handleMaSearchCourse = useSearchCourseInApp(searchCourse);
+	const handleCourseSearchSubmit = () => (e) => {
+		handleMaSearchCourse(searchCourse);
+		updateQueryParam('search_course', searchCourse);
+		e.preventDefault();
+	};
 
 	return (
 			<Stack
@@ -26,8 +66,29 @@ export const NavBarFilters = ({
 				gap={3}
 				direction={ isExtraSmall ? "vertical" : "horizontal" }
 			>
-			<CourseStatusDropDown {...{ filters, handleFilterChange }} />
-			<SortByDropdown {...{ sortBy, handleSortChange }} />
+				<div className="d-flex flex-row flex-grow-1">
+					<div className="pr-3">
+						<CourseStatusDropDown {...{ filters, handleFilterChange }} />
+					</div>
+					<SortByDropdown {...{ sortBy, handleSortChange }} />
+				</div>
+				<Form inline className="float-right">
+					<FormControl
+						leadingElement={<Icon src={Search} />}
+						value={searchCourse}
+						onChange={handleSearchCourseInputChange}
+						type="text" placeholder="Search for courses" />
+					<StatefulButton
+						disabled={!searchCourse.length}
+						variant="primary"
+						onClick={handleCourseSearchSubmit(searchCourse)}
+						labels={{
+							default: formatMessage(messages.SubmitButton),
+						}}
+						className="mr-3"
+						type="submit"
+					/>
+				</Form>
 			</Stack>
 	);
 };

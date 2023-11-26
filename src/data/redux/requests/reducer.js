@@ -7,6 +7,7 @@ import { RequestStates, RequestKeys } from 'data/constants/requests';
 const initialState = {
   [RequestKeys.initialize]: { status: RequestStates.inactive },
   [RequestKeys.refreshList]: { status: RequestStates.inactive },
+  [RequestKeys.searchList]: { status: RequestStates.inactive },
   [RequestKeys.enrollEntitlementSession]: { status: RequestStates.inactive },
   [RequestKeys.leaveEntitlementSession]: { status: RequestStates.inactive },
   [RequestKeys.masquerade]: { status: RequestStates.inactive },
