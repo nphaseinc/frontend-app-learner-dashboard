@@ -16,6 +16,7 @@ export const ViewCertificateButton = ({ cardId }) => {
 			as="a"
 			href={certificate.certPreviewUrl}
 			size="lg"
+			className="primary-blue-bg-color"
 			block
 		>
 			{formatMessage(messages.getCertificate)}
