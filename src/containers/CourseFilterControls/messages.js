@@ -56,5 +56,11 @@ export const messages = StrictDict({
     description: 'Filter button container text',
     defaultMessage: 'Refine',
   },
+  SearchButton: {
+    id: 'learner-dash.courseSearchFilters.SearchButton',
+    defaultMessage: 'Search',
+    description: 'Label for the Search button',
+  },
+
 });
 export default messages;

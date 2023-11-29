@@ -16,10 +16,11 @@ import CourseStatusDropDown from "./components/CourseStatusDropDown";
 import PropTypes from "prop-types";
 import SortByDropdown from "./components/SortByDropdown";
 import {useSearchCourseInApp} from "../../hooks/api";
-import messages from "../MasqueradeBar/messages";
+import messages from "./messages";
 import {formatMessage} from "../../testUtils";
 import { Search } from '@edx/paragon/icons';
 import {updateQueryParam} from "./utils";
+import './index.scss';
 
 export const NavBarFilters = ({
 								  sortBy,
@@ -79,13 +80,12 @@ export const NavBarFilters = ({
 						onChange={handleSearchCourseInputChange}
 						type="text" placeholder="Search for courses" />
 					<StatefulButton
-						disabled={!searchCourse.length}
 						variant="primary"
 						onClick={handleCourseSearchSubmit(searchCourse)}
 						labels={{
-							default: formatMessage(messages.SubmitButton),
+							default: formatMessage(messages.SearchButton),
 						}}
-						className="mr-3"
+						className="mr-3 primary-blue-bg-color"
 						type="submit"
 					/>
 				</Form>
